@@ -12,16 +12,16 @@
 *{box-sizing:border-box} body{margin:0;font-family:"Zen Maru Gothic",-apple-system,"Hiragino Maru Gothic ProN",sans-serif;color:var(--ink);background:var(--paper);
 background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px}
 main{max-width:980px;margin:0 auto;padding:0 20px 110px}
-.hero{text-align:center;padding:44px 0 8px} .hero h1{font-size:clamp(34px,9vw,60px);line-height:1.25;margin:0 0 10px}
-.hero .s{font-size:18px;color:var(--ink2);margin:0 0 22px} .hero img{width:min(80vw,340px);height:auto;margin:24px auto 0;display:block}
+.hero{text-align:center;padding:36px 0 0} .hero h1{font-size:clamp(34px,9vw,60px);line-height:1.25;margin:0 0 10px}
+.hero .s{font-size:18px;color:var(--ink2);margin:0 0 22px} .hero img{width:min(78vw,320px);height:auto;margin:16px auto 0;display:block}
 .btn{display:inline-flex;gap:10px;align-items:center;background:var(--ink);color:#fff;text-decoration:none;border-radius:999px;padding:16px 30px;font-weight:700;font-size:18px}
 .btn small{font-weight:500;opacity:.75;font-size:13px}
 .chips{display:flex;justify-content:center;gap:8px;margin-top:14px;font-size:14px;color:var(--ink2)} .chips span:not(:last-child):after{content:"・";margin-left:8px}
-.b{display:grid;gap:18px;align-items:center;margin:72px 0 0} .b img{width:min(72vw,300px);height:auto;justify-self:center;border-radius:28px;box-shadow:0 16px 40px rgba(70,45,35,.16)}
+.b{display:grid;gap:18px;align-items:center;margin:44px 0 0} .b img{width:min(72vw,300px);height:auto;justify-self:center;border-radius:28px;box-shadow:0 16px 40px rgba(70,45,35,.16)}
 @media(min-width:820px){.b{grid-template-columns:1fr 1fr} .b:nth-of-type(even) .t{order:2}}
 .t{text-align:center} .q{font-size:clamp(26px,6.5vw,40px);font-weight:700;margin:0;line-height:1.35}
 .a{display:inline-block;font-size:clamp(18px,4.5vw,24px);font-weight:700;margin:12px 0 0;padding:2px 10px;background:linear-gradient(transparent 55%,rgba(229,115,155,.35) 55%)}
-.end{text-align:center;margin-top:80px} .end p{font-size:clamp(24px,6vw,34px);font-weight:700;margin:0 0 18px}
+.end{text-align:center;margin-top:48px} .safe{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:560px;margin:0 auto 22px} .safe div{background:#fffdf8;border-radius:14px;padding:12px 6px;font-size:13px;line-height:1.5;color:var(--ink2)} .safe b{display:block;font-size:15px;color:var(--ink)} .end p{font-size:clamp(24px,6vw,34px);font-weight:700;margin:0 0 18px}
 footer{text-align:center;font-size:12px;color:var(--ink2);margin-top:56px;line-height:2} footer a{color:var(--ink2)}
 .sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--paper) 40%);display:flex;justify-content:center}
 @media(min-width:820px){.sticky{display:none}}
@@ -31,13 +31,13 @@ footer{text-align:center;font-size:12px;color:var(--ink2);margin-top:56px;line-h
 <p class="s">推し活の家計簿アプリ</p>
 <a class="btn" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_top&mt=8&pt=127976734">App Store で見る <small>無料</small></a>
 <div class="chips"><span>無料ではじめられる</span><span>広告なし</span><span>★4.8</span></div>
-<img class="card" src="assets/hero-money.jpg" alt="推しの写真と「これまで ¥128,400」のカード" width="720" height="720">
+<img class="card" src="assets/hero-money.png" alt="推しの写真と「これまで ¥128,400」のカード" width="640" height="661">
 </section>
 <section class="b"><div class="t"><p class="q">推しに、いくら使った？</p><p class="a">推しごとに自動で集計</p></div>
 <img src="assets/1-month.jpg" alt="推しごとの今月の合計が出る画面" loading="lazy"></section><section class="b"><div class="t"><p class="q">物販、レシートがない…</p><p class="a">金額だけ、数秒で記録</p></div>
 <img src="assets/2-buppan.jpg" alt="物販で買ったものを数秒で記録する画面" loading="lazy"></section><section class="b"><div class="t"><p class="q">入金締切、忘れそう</p><p class="a">当落と入金をまとめて管理</p></div>
 <img src="assets/3-schedule.jpg" alt="当落と入金締切が並ぶ予定の画面" loading="lazy"></section>
-<section class="end"><p>推し活、ぜんぶ残そう。</p><a class="btn" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_bottom&mt=8&pt=127976734">推しログをはじめる <small>無料</small></a></section>
+<section class="end"><p>推し活、ぜんぶ残そう。</p><div class="safe"><div><b>無料</b>推し2人まで<br>ずっと使える</div><div><b>広告なし</b>記録は<br>端末の中だけ</div><div><b>機種変更OK</b>データの移行も<br>無料でできる</div></div><a class="btn" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_bottom&mt=8&pt=127976734">推しログをはじめる <small>無料</small></a></section>
 <footer>iPhone 用（iOS 17 以降）｜無料: 推し2人まで・今月と先月｜Pro: 月額¥480／年額¥4,800<br>
 <a href="guide/">推し活の記録ガイド</a>｜<a href="build/">開発ログ</a>｜<a href="support.html">サポート</a>｜<a href="privacy.html">プライバシー</a>｜<a href="terms.html">利用規約</a>｜合同会社AMOR</footer>
 </main><div class="sticky"><a class="btn" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_top&mt=8&pt=127976734">App Store で見る <small>無料</small></a></div></body></html>
