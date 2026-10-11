@@ -1,60 +1,127 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>推しログ｜推し活の家計簿アプリ（iPhone）</title>
+<title>推しログ｜推し活の家計簿アプリ（iPhone・無料）</title>
 <meta name="description" content="推しに使ったお金が、ぜんぶ見える。物販・遠征・チケットを数秒で記録できる推し活の家計簿アプリ。無料・広告なし。">
-<link rel="canonical" href="https://oshilog.amorjp.com/">
+<link rel="canonical" href="https://oshilog.amorjp.com/"><link rel="icon" href="assets/icon.png"><link rel="apple-touch-icon" href="assets/icon.png">
 <meta property="og:title" content="推しログ｜推しに使ったお金が、ぜんぶ見える"><meta property="og:description" content="推し活の家計簿アプリ（iPhone・無料）">
 <meta property="og:image" content="https://oshilog.amorjp.com/assets/og.jpg"><meta name="twitter:card" content="summary_large_image">
 <meta name="apple-itunes-app" content="app-id=6779825147">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#F6F1E7;--grid:#e8e1d4;--ink:#332e2a;--ink2:#766c62;--pink:#e5739b}
-*{box-sizing:border-box} body{margin:0;font-family:"Zen Maru Gothic",-apple-system,"Hiragino Maru Gothic ProN",sans-serif;color:var(--ink);background:var(--paper);
+:root{--paper:#F6F1E7;--grid:#e8e1d4;--ink:#332e2a;--ink2:#766c62;--pink:#e5739b;--card:#fffdf8}
+*{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;font-family:"Zen Maru Gothic",-apple-system,"Hiragino Maru Gothic ProN",sans-serif;color:var(--ink);background:var(--paper);
 background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px}
-main{max-width:1040px;margin:0 auto;padding:0 20px 110px}
-header{position:sticky;top:0;z-index:10;background:rgba(246,241,231,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--grid)}
+a{color:inherit} main{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:20;background:rgba(246,241,231,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--grid)}
 header .in{max-width:1040px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:10px}
-header img{width:34px;height:34px;border-radius:9px} header b{font-size:18px} header nav{margin-left:auto;display:flex;gap:22px;align-items:center;font-size:14px}
-header nav a{color:var(--ink);text-decoration:none} header .dl{background:var(--ink);color:#fff;border-radius:999px;padding:8px 16px;font-weight:700}
-@media(max-width:700px){header nav a:not(.dl){display:none}}
-.phone{position:relative;width:min(70vw,290px);margin:24px auto 0;border-radius:46px;background:#1d1a18;padding:11px;box-shadow:0 30px 60px rgba(70,45,35,.25)}
-.phone img{display:block;width:100%;height:auto;border-radius:36px;margin:0;box-shadow:none}
-.phone .card{position:absolute;width:56%;left:-12%;bottom:6%;margin:0} @media(min-width:900px){.phone .card{width:62%;left:-26%}}
-@media(min-width:900px){.hero{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;text-align:left;gap:24px;padding:56px 0 24px} .hero h1{font-size:52px} .hero .s{text-align:left} .hero .chips{justify-content:flex-start} .phone{margin:0 auto}}
-.lab{text-align:center;letter-spacing:.25em;font-size:12px;color:var(--pink);font-weight:700;margin:72px 0 0}
-footer{margin-top:64px} .fb{background:#332e2a;color:#e9e1d6;padding:32px 20px calc(96px + env(safe-area-inset-bottom));text-align:center;font-size:13px;line-height:2}
-.fb a{color:#e9e1d6} .fb .brand{display:flex;justify-content:center;align-items:center;gap:8px;font-size:16px;font-weight:700;margin-bottom:8px} .fb .brand img{width:28px;height:28px;border-radius:7px}
-.hero{text-align:center;padding:36px 0 0} .hero h1{font-size:clamp(34px,9vw,60px);line-height:1.25;margin:0 0 10px}
-.hero .s{font-size:18px;color:var(--ink2);margin:0 0 22px} 
-.btn{display:inline-flex;gap:10px;align-items:center;background:var(--ink);color:#fff;text-decoration:none;border-radius:999px;padding:16px 30px;font-weight:700;font-size:18px}
-.btn small{font-weight:500;opacity:.75;font-size:13px}
-.chips{display:flex;justify-content:center;gap:8px;margin-top:14px;font-size:14px;color:var(--ink2)} .chips span:not(:last-child):after{content:"・";margin-left:8px}
-.b{display:grid;gap:18px;align-items:center;margin:36px 0 0} .b img{width:min(72vw,300px);height:auto;justify-self:center;border-radius:28px;box-shadow:0 16px 40px rgba(70,45,35,.16)}
+header img{width:34px;height:34px;border-radius:9px} header b{font-size:18px}
+header nav{margin-left:auto;display:flex;gap:22px;align-items:center;font-size:14px} header nav a{text-decoration:none}
+.btn{display:inline-flex;gap:10px;align-items:center;justify-content:center;background:var(--ink);color:#fff;text-decoration:none;border-radius:999px;padding:16px 30px;font-weight:700;font-size:18px}
+.btn small{font-weight:500;opacity:.75;font-size:13px} .btn.s{padding:8px 16px;font-size:14px}
+@media(max-width:700px){header nav a:not(.btn){display:none}}
+.hero{text-align:center;padding:36px 0 8px} .hero h1{font-size:clamp(34px,9vw,60px);line-height:1.25;margin:0 0 10px}
+.hero .s{font-size:18px;color:var(--ink2);margin:0 0 22px}
+.rate{margin-top:12px;font-size:14px;color:var(--ink2)} .rate b{color:#e0a100;letter-spacing:1px}
+.chips{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:12px} .chips span{background:var(--card);border:1px solid var(--grid);border-radius:999px;padding:5px 12px;font-size:13px}
+.phone{width:min(70vw,290px);margin:28px auto 0;border-radius:46px;background:#1d1a18;padding:11px;box-shadow:0 30px 60px rgba(70,45,35,.25)}
+.phone img{display:block;width:100%;height:auto;border-radius:36px}
+@media(min-width:900px){.hero{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;text-align:left;gap:24px;padding:64px 0 32px} .hero h1{font-size:52px} .chips{justify-content:flex-start} .phone{margin:0 auto}}
+.lab{text-align:center;letter-spacing:.25em;font-size:12px;color:var(--pink);font-weight:700;margin:80px 0 4px}
+.h2{text-align:center;font-size:clamp(24px,6vw,34px);font-weight:700;margin:0 0 8px}
+.b{display:grid;gap:18px;align-items:center;margin:48px 0 0} .b img{width:min(72vw,300px);height:auto;justify-self:center;border-radius:28px;box-shadow:0 16px 40px rgba(70,45,35,.16)}
 @media(min-width:820px){.b{grid-template-columns:1fr 1fr} .b:nth-of-type(even) .t{order:2}}
-.t{text-align:center} .q{font-size:clamp(26px,6.5vw,40px);font-weight:700;margin:0;line-height:1.35}
-.a{display:inline-block;font-size:clamp(18px,4.5vw,24px);font-weight:700;margin:12px 0 0;padding:2px 10px;background:linear-gradient(transparent 55%,rgba(229,115,155,.35) 55%)}
-.end{text-align:center;margin-top:48px} .safe{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:560px;margin:0 auto 22px} .safe div{background:#fffdf8;border-radius:14px;padding:12px 6px;font-size:13px;line-height:1.5;color:var(--ink2)} .safe b{display:block;font-size:15px;color:var(--ink)} .end p{font-size:clamp(24px,6vw,34px);font-weight:700;margin:0 0 18px}
-
-.sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--paper) 40%);display:flex;justify-content:center}
-@media(min-width:820px){.sticky{display:none}}
-@media(min-width:900px){.hero{text-align:left} .hero h1{font-size:50px} .hero .chips{justify-content:flex-start}}
+.t{text-align:center;max-width:440px;justify-self:center} .q{font-size:clamp(26px,6.5vw,38px);font-weight:700;margin:0;line-height:1.35}
+.a{display:inline-block;font-size:clamp(18px,4.5vw,22px);font-weight:700;margin:12px 0 0;padding:2px 10px;background:linear-gradient(transparent 55%,rgba(229,115,155,.35) 55%)}
+.d{color:var(--ink2);font-size:15px;line-height:1.8;margin:12px 0 0} .more{display:inline-block;margin-top:12px;font-weight:700;color:#c44e3a;text-decoration:none}
+.upd{list-style:none;padding:0;max-width:620px;margin:16px auto 0} .upd li{background:var(--card);border-radius:14px;padding:12px 16px;margin:8px 0;font-size:15px}
+.upd span{display:inline-block;font-size:12px;color:#fff;background:var(--pink);border-radius:999px;padding:1px 8px;margin-right:10px}
+.price{display:grid;gap:12px;max-width:720px;margin:16px auto 0} @media(min-width:640px){.price{grid-template-columns:1fr 1fr}}
+.p{background:var(--card);border-radius:18px;padding:20px 22px} .p .n{font-size:14px;color:var(--ink2)} .p .v{font-size:28px;font-weight:700;margin:2px 0 8px}
+.p ul{padding-left:18px;margin:0;color:var(--ink2);font-size:14px;line-height:1.9} .p.pro{border:2px solid var(--pink)}
+details{background:var(--card);border-radius:14px;padding:14px 18px;margin:10px auto;max-width:720px} summary{font-weight:700;cursor:pointer} details p{color:var(--ink2);margin:8px 0 0;line-height:1.8}
+.end{text-align:center;padding:24px 0 8px} .safe{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:560px;margin:18px auto 22px}
+.safe div{background:var(--card);border-radius:14px;padding:12px 6px;font-size:13px;line-height:1.5;color:var(--ink2)} .safe b{display:block;font-size:15px;color:var(--ink)}
+footer{margin-top:72px;background:#332e2a;color:#e9e1d6;padding:32px 20px calc(110px + env(safe-area-inset-bottom));text-align:center;font-size:13px;line-height:2}
+footer .brand{display:flex;justify-content:center;align-items:center;gap:8px;font-size:16px;font-weight:700;margin-bottom:8px} footer .brand img{width:28px;height:28px;border-radius:7px}
+footer .note{opacity:.7;font-size:12px}
+#bar{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:30;background:var(--card);border-radius:18px;box-shadow:0 10px 30px rgba(50,35,25,.22);
+display:flex;align-items:center;gap:10px;padding:10px 12px;transform:translateY(150%);transition:transform .3s} #bar.on{transform:none}
+#bar img{width:42px;height:42px;border-radius:10px} #bar div{flex:1;line-height:1.3} #bar b{font-size:15px} #bar small{display:block;color:var(--ink2);font-size:12px}
+@media(min-width:900px){#bar{display:none}}
+#qr{position:fixed;inset:0;background:rgba(40,30,25,.45);z-index:40;display:flex;align-items:center;justify-content:center} #qr[hidden],#toast[hidden]{display:none}
+#qr .box{background:var(--card);border-radius:22px;padding:28px 30px;text-align:center;max-width:360px} #qr img{width:220px;height:220px} #qr p{margin:8px 0 0;color:var(--ink2)}
+#qr button{margin-top:14px;border:0;background:none;color:var(--ink2);font:inherit;cursor:pointer;text-decoration:underline}
+#toast{position:fixed;left:50%;bottom:110px;transform:translateX(-50%);background:var(--ink);color:#fff;border-radius:12px;padding:12px 18px;z-index:50;font-size:14px}
 </style></head><body>
 <header><div class="in"><img src="assets/icon.png" alt="推しログのアイコン"><b>推しログ</b>
-<nav><a href="#features">できること</a><a href="#price">料金</a><a href="guide/">ガイド</a><a class="dl" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_header&mt=8&pt=127976734">ダウンロード</a></nav></div></header><main>
+<nav><a href="#features">できること</a><a href="#price">料金</a><a href="#faq">よくある質問</a><a class="btn s cta" data-pos="header" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_header&mt=8&pt=127976734">無料でダウンロード</a></nav></div></header>
+<main>
 <section class="hero"><div>
 <h1>推しに使ったお金、<br>ぜんぶ見える。</h1>
-<p class="s">推し活の家計簿アプリ</p>
-<a class="btn" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_top&mt=8&pt=127976734">App Store で見る <small>無料</small></a>
-<div class="chips"><span>無料ではじめられる</span><span>広告なし</span><span>★4.8</span></div>
-</div>
-<div class="phone"><img src="assets/phone-home.jpg" alt="推しログのホーム画面" width="600" height="1305"></div>
-</section>
-<p class="lab" id="features">FEATURES</p>
-<section class="b"><div class="t"><p class="q">推しに、いくら使った？</p><p class="a">推しごとに自動で集計</p></div>
-<img src="assets/1-month.jpg" alt="推しごとの今月の合計が出る画面" loading="lazy"></section><section class="b"><div class="t"><p class="q">物販、レシートがない…</p><p class="a">金額だけ、数秒で記録</p></div>
-<img src="assets/2-buppan.jpg" alt="物販で買ったものを数秒で記録する画面" loading="lazy"></section><section class="b"><div class="t"><p class="q">入金締切、忘れそう</p><p class="a">当落と入金をまとめて管理</p></div>
+<p class="s">物販・遠征・チケットを数秒で記録する、<br>推し活の家計簿アプリ</p>
+<a class="btn cta" data-pos="hero" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_hero&mt=8&pt=127976734">App Store で無料ダウンロード</a>
+<div class="rate"><b>★★★★★</b> 4.8（App Store）｜iPhone 用</div>
+<div class="chips"><span>無料ではじめられる</span><span>広告なし</span><span>記録は端末の中</span></div>
+</div><div class="phone"><img src="assets/phone-home.jpg" alt="推しログのホーム画面" width="600" height="1305"></div></section>
+
+<p class="lab" id="features">FEATURES</p><p class="h2">推し活のための、3つのこと</p>
+<section class="b"><div class="t"><p class="q">推しに、いくら使った？</p><p class="a">推しごとに自動で集計</p><p class="d">チケット・グッズ・遠征・配信・CD・コラボカフェ。推しごとに、今月いくらかがひと目で分かります。</p>
+<a class="more cta" data-pos="feat1" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_feat1&mt=8&pt=127976734">無料で使ってみる →</a></div>
+<img src="assets/1-month.jpg" alt="推しごとの今月の合計が出る画面" loading="lazy"></section><section class="b"><div class="t"><p class="q">物販、レシートがない…</p><p class="a">金額だけ、数秒で記録</p><p class="d">列を離れたら金額と場所だけ。あとから見返すと、その日のことを思い出せます。</p>
+<a class="more cta" data-pos="feat2" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_feat2&mt=8&pt=127976734">無料で使ってみる →</a></div>
+<img src="assets/2-buppan.jpg" alt="物販で買ったものを数秒で記録する画面" loading="lazy"></section><section class="b"><div class="t"><p class="q">入金締切、忘れそう</p><p class="a">当落と入金をまとめて管理</p><p class="d">応募中・当選・落選を付けておけば、当落発表の前日にお知らせします。</p>
+<a class="more cta" data-pos="feat3" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_feat3&mt=8&pt=127976734">無料で使ってみる →</a></div>
 <img src="assets/3-schedule.jpg" alt="当落と入金締切が並ぶ予定の画面" loading="lazy"></section>
-<p class="lab" id="price">PRICE</p><section class="end" style="margin-top:12px"><p>推し活、ぜんぶ残そう。</p><div class="safe"><div><b>無料</b>推し2人まで<br>ずっと使える</div><div><b>広告なし</b>記録は<br>端末の中だけ</div><div><b>機種変更OK</b>データの移行も<br>無料でできる</div></div><a class="btn" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_bottom&mt=8&pt=127976734">推しログをはじめる <small>無料</small></a></section>
-</main><footer><div class="fb"><div class="brand"><img src="assets/icon.png" alt="">推しログ</div>
-iPhone 用（iOS 17 以降）｜無料: 推し2人まで・今月と先月｜Pro: 月額¥480／年額¥4,800<br>
-<a href="guide/">推し活の記録ガイド</a>｜<a href="build/">開発ログ</a>｜<a href="support.html">サポート</a>｜<a href="privacy.html">プライバシー</a>｜<a href="terms.html">利用規約</a><br>© 2026 合同会社AMOR</div></footer></body></html>
+
+<p class="lab">UPDATES</p><p class="h2">毎月アップデートしています</p>
+<ul class="upd"><li><span>10月</span>ホームの見出しに推しの写真。推し歴の日数もそろえました</li><li><span>10月</span>アップデートの内容が、アプリの中で分かるように</li><li><span>10月</span>全データの書き出しと復元を、無料にしました</li></ul>
+
+<p class="lab" id="price">PRICE</p><p class="h2">無料ではじめられます</p>
+<div class="price"><div class="p"><div class="n">無料</div><div class="v">¥0</div><ul><li>推し2人まで</li><li>今月と先月の見返し</li><li>当落・入金の記録、感想、共有カード</li><li>全データの書き出し・復元</li></ul></div>
+<div class="p pro"><div class="n">Pro</div><div class="v">¥480<small style="font-size:14px">／月</small></div><ul><li>推し3人以上・推しカラー全12色</li><li>それより前の月の見返し・CSV</li><li>iCloud 同期・入金締切のお知らせ</li><li>年額 ¥4,800（1か月無料でお試し）</li></ul></div></div>
+
+<p class="lab" id="faq">FAQ</p><p class="h2">よくある質問</p>
+<details><summary>無料でどこまで使えますか？</summary><p>推し2人まで、今月と先月の記録はずっと無料です。広告もありません。</p></details><details><summary>機種変更したら記録は消えますか？</summary><p>設定の「バックアップファイルを作る」で全データを書き出し、新しい iPhone で開けば戻せます（無料）。Pro なら iCloud で自動同期もできます。</p></details><details><summary>記録した内容はどこに保存されますか？</summary><p>あなたの iPhone の中です。開発者が見ることはできません。</p></details><details><summary>Android 版はありますか？</summary><p>いまは iPhone（iOS 17 以降）だけです。</p></details>
+
+<section class="end" id="end"><p class="h2" style="margin-top:72px">推し活、ぜんぶ残そう。</p>
+<div class="safe"><div><b>無料</b>推し2人まで<br>ずっと使える</div><div><b>広告なし</b>記録は<br>端末の中だけ</div><div><b>機種変更OK</b>データの移行も<br>無料でできる</div></div>
+<a class="btn cta" data-pos="end" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_end&mt=8&pt=127976734">App Store で無料ダウンロード</a></section>
+</main>
+<footer><div class="brand"><img src="assets/icon.png" alt="">推しログ</div>
+iPhone 用（iOS 17 以降）<br>
+<a href="guide/">推し活の記録ガイド</a>｜<a href="build/">開発ログ</a>｜<a href="support.html">サポート</a>｜<a href="privacy.html">プライバシー</a>｜<a href="terms.html">利用規約</a><br>
+<span class="note">このサイトは、訪問数とボタンが押された数だけを匿名で数えています（Cookie は使いません）。</span><br>© 2026 合同会社AMOR</footer>
+<div id="bar"><img src="assets/icon.png" alt=""><div><b>推しログ</b><small>★4.8・無料・推し活の家計簿</small></div><a class="btn s cta" data-pos="bar" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_bar&mt=8&pt=127976734">入手</a></div>
+<div id="qr" hidden><div class="box"><b>iPhone のカメラで読み取ってください</b><img src="assets/qr-appstore.png" alt="App Store の推しログのページへの QR コード"><p>推しログは iPhone 用のアプリです</p><button id="qrclose">閉じる</button></div></div>
+<div id="toast" hidden>推しログは、いまは iPhone 版だけです</div>
+<script>
+(function(){
+  var APP='C45C6173-98D8-4F9D-ABA6-7ABF2BCF1807', ua=navigator.userAgent;
+  var dev=/iPhone|iPod/.test(ua)?'iphone':/iPad|Macintosh/.test(ua)&&'ontouchend' in document?'ipad':/Android/.test(ua)?'android':'desktop';
+  var sid; try{sid=sessionStorage.getItem('oshilog.sid')||Math.random().toString(36).slice(2);sessionStorage.setItem('oshilog.sid',sid);}catch(e){sid=Math.random().toString(36).slice(2);}
+  var ref=''; try{ref=document.referrer?new URL(document.referrer).hostname:'';}catch(e){}
+  var q=new URLSearchParams(location.search), src=q.get('src')||q.get('utm_source')||'';
+  function sig(type,p){ try{ var body=JSON.stringify([{appID:APP,clientUser:sid,sessionID:sid,type:type,isTestMode:location.protocol==='file:'?'true':'false',
+      payload:Object.assign({device:dev,ref:ref,src:src,path:location.pathname},p||{})}]);
+      if(navigator.sendBeacon){navigator.sendBeacon('https://nom.telemetrydeck.com/v2/',new Blob([body],{type:'application/json'}));}
+      else{fetch('https://nom.telemetrydeck.com/v2/',{method:'POST',headers:{'Content-Type':'application/json'},body:body,keepalive:true});} }catch(e){} }
+  sig('web.pageview');
+  var modal=document.getElementById('qr'), toast=document.getElementById('toast');
+  document.querySelectorAll('a.cta').forEach(function(a){ a.addEventListener('click',function(e){
+    var pos=a.getAttribute('data-pos'); sig('web.cta',{pos:pos});
+    if(dev==='desktop'){e.preventDefault(); modal.hidden=false;}
+    else if(dev==='android'){e.preventDefault(); toast.hidden=false; setTimeout(function(){toast.hidden=true},3500);}
+  });});
+  document.getElementById('qrclose').addEventListener('click',function(){modal.hidden=true});
+  modal.addEventListener('click',function(e){if(e.target===modal)modal.hidden=true});
+  var bar=document.getElementById('bar'), hero=document.querySelector('.hero');
+  var seen={};
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){
+    if(en.target===hero){ bar.classList.toggle('on',!en.isIntersecting); }
+    else if(en.isIntersecting&&!seen[en.target.id]){ seen[en.target.id]=1; sig('web.reach',{section:en.target.id}); }
+  });},{threshold:0.15});
+  io.observe(hero); ['features','price','faq','end'].forEach(function(id){var el=document.getElementById(id); if(el)io.observe(el);});
+})();
+</script>
+</body></html>
