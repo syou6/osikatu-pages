@@ -1,71 +1,43 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>推しログ｜推し活の記録・家計簿・当落管理アプリ</title>
-<meta name="description" content="物販で買ったもの、遠征費、チケットの当落と入金を数秒で記録。推しごとにまとまって、あとで振り返れる推し活手帳アプリ。広告なし・無料ではじめられます（iPhone）。">
+<title>推しログ｜推し活の家計簿アプリ（iPhone）</title>
+<meta name="description" content="推しに使ったお金が、ぜんぶ見える。物販・遠征・チケットを数秒で記録できる推し活の家計簿アプリ。無料・広告なし。">
 <link rel="canonical" href="https://oshilog.amorjp.com/">
-<meta property="og:title" content="推しログ｜推し活、ぜんぶ残る。"><meta property="og:description" content="物販・遠征・当落を数秒で記録できる推し活手帳アプリ（iPhone）">
+<meta property="og:title" content="推しログ｜推しに使ったお金が、ぜんぶ見える"><meta property="og:description" content="推し活の家計簿アプリ（iPhone・無料）">
 <meta property="og:image" content="https://oshilog.amorjp.com/assets/og.jpg"><meta name="twitter:card" content="summary_large_image">
 <meta name="apple-itunes-app" content="app-id=6779825147">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#F6F1E7;--grid:#e8e1d4;--ink:#332e2a;--ink2:#766c62;--pink:#e5739b;--red:#c44e3a;--card:#fffdf8}
+:root{--paper:#F6F1E7;--grid:#e8e1d4;--ink:#332e2a;--ink2:#766c62;--pink:#e5739b}
 *{box-sizing:border-box} body{margin:0;font-family:"Zen Maru Gothic",-apple-system,"Hiragino Maru Gothic ProN",sans-serif;color:var(--ink);background:var(--paper);
-background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px;line-height:1.75}
-main{max-width:960px;margin:0 auto;padding:0 20px 120px}
-.hero{display:grid;gap:24px;align-items:center;padding:36px 0 8px} @media(min-width:820px){.hero{grid-template-columns:1.05fr 1fr}}
-.cap{letter-spacing:.25em;font-size:12px;color:var(--ink2)} h1{font-size:clamp(34px,8vw,56px);line-height:1.25;margin:8px 0 12px;font-weight:700}
-.lead{font-size:17px;color:var(--ink2);margin:0 0 20px}
-.heroimg{width:100%;height:auto;max-width:380px;justify-self:center;display:block;margin:0 auto}
-.btn{display:inline-flex;gap:10px;align-items:center;justify-content:center;background:var(--ink);color:#fff;text-decoration:none;border-radius:999px;padding:16px 28px;font-weight:700;font-size:17px}
-.btn small{font-weight:500;opacity:.75;font-size:12px} .meta{font-size:13px;color:var(--ink2);margin-top:10px}
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0} .badges span{background:var(--card);border:1px solid var(--grid);border-radius:999px;padding:6px 12px;font-size:13px}
-h2{font-size:clamp(24px,5vw,32px);margin:64px 0 8px;text-align:center} .sub{text-align:center;color:var(--ink2);margin:0 0 24px}
-.shots{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 20px;-webkit-overflow-scrolling:touch}
-.shots img{width:220px;flex:0 0 auto;border-radius:24px;scroll-snap-align:center;box-shadow:0 10px 26px rgba(70,45,35,.15);background:#fff}
-@media(min-width:960px){.shots{justify-content:center}}
-.feat{display:grid;gap:16px} @media(min-width:820px){.feat{grid-template-columns:repeat(3,1fr)}}
-.f{background:var(--card);border-radius:18px;padding:22px;box-shadow:0 2px 6px rgba(0,0,0,.05);position:relative}
-.f:before{content:"";position:absolute;top:-9px;left:50%;width:84px;height:18px;margin-left:-42px;background:rgba(229,115,155,.45);transform:rotate(-2deg)}
-.f h3{margin:6px 0 6px;font-size:19px} .f p{margin:0;color:var(--ink2);font-size:15px}
-.promise{background:var(--card);border-radius:18px;padding:22px 24px;max-width:640px;margin:0 auto} .promise li{margin:6px 0}
-.price{display:grid;gap:12px;max-width:640px;margin:0 auto} @media(min-width:640px){.price{grid-template-columns:1fr 1fr}}
-.p{background:var(--card);border-radius:16px;padding:18px 20px} .p b{font-size:18px} .p ul{padding-left:18px;margin:8px 0 0;color:var(--ink2);font-size:14px}
-details{background:var(--card);border-radius:14px;padding:14px 18px;margin:10px auto;max-width:640px} summary{font-weight:700;cursor:pointer}
-.end{text-align:center;margin-top:56px} footer{text-align:center;font-size:13px;color:var(--ink2);margin-top:48px} footer a{color:var(--red)}
-.sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--paper) 35%);display:flex;justify-content:center}
+background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px}
+main{max-width:980px;margin:0 auto;padding:0 20px 110px}
+.hero{text-align:center;padding:44px 0 8px} .hero h1{font-size:clamp(34px,9vw,60px);line-height:1.25;margin:0 0 10px}
+.hero .s{font-size:18px;color:var(--ink2);margin:0 0 22px} .hero img{width:min(80vw,340px);height:auto;margin:24px auto 0;display:block}
+.btn{display:inline-flex;gap:10px;align-items:center;background:var(--ink);color:#fff;text-decoration:none;border-radius:999px;padding:16px 30px;font-weight:700;font-size:18px}
+.btn small{font-weight:500;opacity:.75;font-size:13px}
+.chips{display:flex;justify-content:center;gap:8px;margin-top:14px;font-size:14px;color:var(--ink2)} .chips span:not(:last-child):after{content:"・";margin-left:8px}
+.b{display:grid;gap:18px;align-items:center;margin:72px 0 0} .b img{width:min(72vw,300px);height:auto;justify-self:center;border-radius:28px;box-shadow:0 16px 40px rgba(70,45,35,.16)}
+@media(min-width:820px){.b{grid-template-columns:1fr 1fr} .b:nth-of-type(even) .t{order:2}}
+.t{text-align:center} .q{font-size:clamp(26px,6.5vw,40px);font-weight:700;margin:0;line-height:1.35}
+.a{display:inline-block;font-size:clamp(18px,4.5vw,24px);font-weight:700;margin:12px 0 0;padding:2px 10px;background:linear-gradient(transparent 55%,rgba(229,115,155,.35) 55%)}
+.end{text-align:center;margin-top:80px} .end p{font-size:clamp(24px,6vw,34px);font-weight:700;margin:0 0 18px}
+footer{text-align:center;font-size:12px;color:var(--ink2);margin-top:56px;line-height:2} footer a{color:var(--ink2)}
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--paper) 40%);display:flex;justify-content:center}
 @media(min-width:820px){.sticky{display:none}}
 </style></head><body><main>
-<section class="hero"><div>
-<div class="cap">OSHIKATSU LOG</div>
-<h1>推し活、<br>ぜんぶ残る。</h1>
-<p class="lead">物販で買ったもの、遠征費、チケットの当落と入金。<br>推しを想った時間とお金を、数秒で手帳に。</p>
+<section class="hero">
+<h1>推しに使ったお金、<br>ぜんぶ見える。</h1>
+<p class="s">推し活の家計簿アプリ</p>
 <a class="btn" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_top&mt=8&pt=127976734">App Store で見る <small>無料</small></a>
-<div class="meta">iPhone（iOS 17 以降）｜App Store 評価 ★4.8</div>
-<div class="badges"><span>広告なし</span><span>記録は端末の中</span><span>書き出し・復元は無料</span></div>
-</div><img class="heroimg" src="assets/hero.jpg" alt="推しの写真と「推して731日め」の推しログのカード" width="720" height="720"></section>
-
-<h2>手帳みたいに、書いて、見返す</h2><p class="sub">使い込んだ方眼ノートのような画面です</p>
-<div class="shots"><img src="assets/1-month.jpg" alt="今月いくら使ったか" loading="lazy"><img src="assets/2-buppan.jpg" alt="物販で買ったら数秒で記録" loading="lazy"><img src="assets/3-schedule.jpg" alt="当落も入金も忘れない" loading="lazy"><img src="assets/4-widget.jpg" alt="推しと何日、ホーム画面に" loading="lazy"></div>
-
-<h2>推し活のための3つ</h2><p class="sub">ふつうの家計簿では「娯楽費」にまとまってしまうものを、推しごとに</p>
-<div class="feat">
-<div class="f"><h3>物販の列を離れたら、数秒で</h3><p>金額と「どこで」だけで記録。チケット・グッズ・遠征・配信・CD・コラボカフェに分けて、推しごとに自動でまとまります。</p></div>
-<div class="f"><h3>当落と入金を、忘れない</h3><p>予定に応募中・当選・落選を付けて、当落発表の前日にお知らせ。当選したら入金締切も残せます。</p></div>
-<div class="f"><h3>あとで誇れる記録に</h3><p>ライブの翌日に「どうだった？」。月のはじめには先月が一冊にまとまり、これまで会いに行った回数と推した日数を振り返れます。</p></div>
-</div>
-
-<h2>記録は、あなたのもの</h2>
-<ul class="promise"><li>広告も、ほかのアプリをまたぐ追跡もありません</li><li>記録はすべて端末の中に保存されます（Pro の iCloud 同期はあなたの iCloud に）</li><li>全データの書き出しと復元は、無料でいつでもできます</li></ul>
-
-<h2>料金</h2>
-<div class="price"><div class="p"><b>無料</b><ul><li>推し2人まで</li><li>今月と先月の見返し</li><li>当落・入金の記録、感想、共有カード</li></ul></div>
-<div class="p"><b>Pro　月額¥480／年額¥4,800</b><ul><li>推し3人以上・推しカラー全12色</li><li>それより前の月の見返し・CSV 書き出し</li><li>iCloud 同期・入金締切のお知らせ</li><li>年額は1か月無料でお試し</li></ul></div></div>
-
-<h2>よくある質問</h2>
-<details><summary>無料のままでも使えますか？</summary><p>はい。推し2人まで、今月と先月の記録はずっと無料です。</p></details>
-<details><summary>機種変更しても記録は残りますか？</summary><p>設定の「バックアップファイルを作る」で全データを書き出し、新しい iPhone で開けば戻せます（無料）。Pro なら iCloud 同期もできます。</p></details>
-<details><summary>Android 版はありますか？</summary><p>いまは iPhone だけです。</p></details>
-
-<div class="end"><a class="btn" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_bottom&mt=8&pt=127976734">推しログをはじめる <small>無料</small></a></div>
-<footer><a href="guide/">推し活の記録ガイド</a>｜<a href="build/">開発ログ</a>｜<a href="support.html">サポート</a>｜<a href="privacy.html">プライバシーポリシー</a>｜<a href="terms.html">利用規約</a><br>合同会社AMOR</footer>
+<div class="chips"><span>無料ではじめられる</span><span>広告なし</span><span>★4.8</span></div>
+<img class="card" src="assets/hero-money.jpg" alt="推しの写真と「これまで ¥128,400」のカード" width="720" height="720">
+</section>
+<section class="b"><div class="t"><p class="q">推しに、いくら使った？</p><p class="a">推しごとに自動で集計</p></div>
+<img src="assets/1-month.jpg" alt="推しごとの今月の合計が出る画面" loading="lazy"></section><section class="b"><div class="t"><p class="q">物販、レシートがない…</p><p class="a">金額だけ、数秒で記録</p></div>
+<img src="assets/2-buppan.jpg" alt="物販で買ったものを数秒で記録する画面" loading="lazy"></section><section class="b"><div class="t"><p class="q">入金締切、忘れそう</p><p class="a">当落と入金をまとめて管理</p></div>
+<img src="assets/3-schedule.jpg" alt="当落と入金締切が並ぶ予定の画面" loading="lazy"></section>
+<section class="end"><p>推し活、ぜんぶ残そう。</p><a class="btn" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_bottom&mt=8&pt=127976734">推しログをはじめる <small>無料</small></a></section>
+<footer>iPhone 用（iOS 17 以降）｜無料: 推し2人まで・今月と先月｜Pro: 月額¥480／年額¥4,800<br>
+<a href="guide/">推し活の記録ガイド</a>｜<a href="build/">開発ログ</a>｜<a href="support.html">サポート</a>｜<a href="privacy.html">プライバシー</a>｜<a href="terms.html">利用規約</a>｜合同会社AMOR</footer>
 </main><div class="sticky"><a class="btn" href="https://apps.apple.com/jp/app/apple-store/id6779825147?ct=lp_top&mt=8&pt=127976734">App Store で見る <small>無料</small></a></div></body></html>
