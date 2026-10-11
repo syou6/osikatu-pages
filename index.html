@@ -104,8 +104,8 @@ iPhone 用（iOS 17 以降）<br>
   var q=new URLSearchParams(location.search), src=q.get('src')||q.get('utm_source')||'';
   function sig(type,p){ try{ var body=JSON.stringify([{appID:APP,clientUser:sid,sessionID:sid,type:type,isTestMode:location.protocol==='file:'?'true':'false',
       payload:Object.assign({device:dev,ref:ref,src:src,path:location.pathname},p||{})}]);
-      if(navigator.sendBeacon){navigator.sendBeacon('https://nom.telemetrydeck.com/v2/',new Blob([body],{type:'application/json'}));}
-      else{fetch('https://nom.telemetrydeck.com/v2/',{method:'POST',headers:{'Content-Type':'application/json'},body:body,keepalive:true});} }catch(e){} }
+      // sendBeacon は JSON だと CORS で黙って捨てられるので fetch（keepalive でページ移動中も送る）
+      fetch('https://nom.telemetrydeck.com/v2/',{method:'POST',headers:{'Content-Type':'application/json'},body:body,keepalive:true}).catch(function(){}); }catch(e){} }
   sig('web.pageview');
   var modal=document.getElementById('qr'), toast=document.getElementById('toast');
   document.querySelectorAll('a.cta').forEach(function(a){ a.addEventListener('click',function(e){
